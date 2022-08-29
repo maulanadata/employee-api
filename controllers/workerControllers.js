@@ -58,73 +58,29 @@ class WorkerController {
   // update data worker with :id
   static async updateWorker(req, res) {
     try {
-      const { id } = req.params;
-      const { title, desc } = req.body;
+      const { first_name, last_name, salary, departement } = req.body;
+      let data = {
+        first_name: first_name,
+        last_name: last_name,
+        salary: salary,
+        joining_date: new Date.now(), // int epoch time
+        departement: departement
+      };
+      // const data = {...req.body};
 
-      const getWorkers = await getDb();
-
-      const getOtherWorkers = [];
-
-      const findWorker = getWorkers.workers.filter((worker) => {
-        if (worker.id === +id) {
-          return worker;
-        } else {
-          getOtherWorkers.push(worker);
-        }
-      });
-
-      if (findWorker.length > 0) {
-        getWorkers["workers"] = getOtherWorkers;
-
-        await fs.writeFile(db, JSON.stringify(getWorkers));
-
-        const data = {
-          id: findWorker[0].id,
-          title,
-          desc,
-        };
-
-        getWorkers.workers.push(data);
-
-        await fs.writeFile(db, JSON.stringify(getWorkers));
-
-        res
-          .status(200)
-          .json({ message: `Success update worker with id ${id}` });
-      } else {
-        res.status(200).json({ message: "Data not found" });
-      }
-    } catch (error) {
-      res.status(400).json({ data: error });
+    }
+    catch (err) {
+      return res.status(500).json({ message: "Failed Insert Data!!", error: err });
     }
   }
 
   // delete data worker with :id
   static async deleteWorker(req, res) {
     try {
-      const { id } = req.params;
-
-      const getWorkers = await getDb();
-
-      let getWorker;
-
-      const findWorker = getWorkers.workers.filter((worker) => {
-        if (worker.id !== +id) {
-          return worker;
-        } else getWorker = worker;
-      });
-
-      if (getWorker) {
-        getWorkers["workers"] = findWorker;
-        await fs.writeFile(db, JSON.stringify(getWorkers));
-        res
-          .status(200)
-          .json({ message: `Success delete worker with id ${id}` });
-      } else {
-        res.status(200).json({ message: "Data not found" });
-      }
-    } catch (error) {
-      res.status(400).json({ data: err });
+      
+    }
+    catch (err) {
+      return res.status(500).json({ message: "Failed Insert Data!!", error: err });
     }
   }
 }
