@@ -13,8 +13,7 @@
           "status": 308,
           "headers": { "Location": "https://employee-apiku.vercel.app/" }
       }
-  ],
-  "cache": ["node_modules/**"]
+  ]
 }
 
   
