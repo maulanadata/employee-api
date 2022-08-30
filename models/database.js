@@ -17,8 +17,11 @@ const koneksi = mysql.createConnection({
 })
 
 koneksi.connect((err) => {
-  if (err) throw err;
-  console.log("database terkoneksi");
+  if (err){
+    console.log(err);
+  }else{
+    console.log("database terkoneksi");
+  }
 })
 
 module.exports = koneksi;
