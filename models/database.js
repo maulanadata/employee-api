@@ -1,7 +1,6 @@
 const mysql = require("mysql");
 
-const koneksi = 
-mysql.createConnection({
+const koneksi = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
@@ -9,8 +8,8 @@ mysql.createConnection({
   multipleStatements: true
 })
 
-// mysql.createConnection({
-// 	host: "remotemysql.com:3306",
+// const koneksi = mysql.createConnection({
+// 	host: "remotemysql.com",
 // 	user: "2KlNMOkc3b",
 // 	password: "0aNdhRWoyk",
 // 	database: "2KlNMOkc3b",
