@@ -1,14 +1,14 @@
 {
-  "name": "ujian-node",
+  "name": "employee-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "18.x"
+    "node": ">14.x"
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "build": "nodemon index.js"
   },
   "author": "wildan maulana",
   "license": "MIT",
@@ -18,5 +18,8 @@
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "@vercel/node": "^2.5.11"
   }
 }
