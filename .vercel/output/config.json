@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "builds": [
+      {
+          "src": "./index.js",
+          "use": "@vercel/node"
+      }
+  ],
+  "routes": [
+      {
+          "src": "/(.*)",
+          "dest": "/",
+          "status": 308,
+          "headers": { "Location": "https://employee-apiku.vercel.app/" }
+      }
+  ],
+  "cache": [".cache/**", "node_modules/**"]
+}
+
+  
