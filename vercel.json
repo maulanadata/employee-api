@@ -14,7 +14,7 @@
           "headers": { "Location": "https://employee-apiku.vercel.app/" }
       }
   ],
-  "cache": [".cache/**", "node_modules/**"]
+  "cache": ["node_modules/**"]
 }
 
   
