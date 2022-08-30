@@ -21,7 +21,7 @@ const koneksi = mysql.createPool({
 	user: "2KlNMOkc3b",
 	password: "0aNdhRWoyk",
 	database: "2KlNMOkc3b",
-  connectionLimit: 10,
+  connectionLimit: 100,
   multipleStatements: true
 })
 
