@@ -1,6 +1,9 @@
 const mysql = require("mysql");
 const util = require('util');
 
+
+// ============ development lokal ============= //
+
 // const koneksi = mysql.createConnection({
 //   host: "localhost",
 //   user: "root",
@@ -14,10 +17,13 @@ const util = require('util');
 //   console.log("database terkoneksi");
 // })
 
+// ====================================================== //
+
+// ============ development server ============= //
 
 // menggunakan createPool untuk auto handling error connection lost
 const koneksi = mysql.createPool({
-	host: "remotemysql.com",
+  host: "remotemysql.com",
 	user: "2KlNMOkc3b",
 	password: "0aNdhRWoyk",
 	database: "2KlNMOkc3b",
@@ -51,5 +57,8 @@ koneksi.getConnection((err, connection) => {
 
 // Promisify for Node.js async/await.
 koneksi.query = util.promisify(koneksi.query)
+
+// ========================================================= //
+
 
 module.exports = koneksi;

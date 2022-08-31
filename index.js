@@ -27,11 +27,11 @@ app.use(bodyParser.urlencoded({
 app.set('view engine', 'ejs');
 // =======================
 app.get('/', (req, res) => {
-    res.send('Employee Api');
+    res.render('./home');
 });
 
 app.get('/docs', (req, res) => {
-  res.render('docs/index');
+  res.render('docs/documentation');
 });
 // =======================
 

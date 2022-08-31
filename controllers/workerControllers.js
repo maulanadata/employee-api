@@ -22,9 +22,18 @@ class WorkerController {
   static async getWorkerId(req, res) {
     try {
       const queryRead = "SELECT * FROM worker WHERE id = ?";
+      const querySearch = 'SELECT * FROM worker WHERE id = ?';
+    
+      koneksi.query(querySearch, req.params.id, (err, rows, field) => {
 
-      koneksi.query(queryRead, req.params.id, (err, rows, field) => {
-        res.status(200).json({ success: true, data: rows });
+        // jika ketemu ID-nya
+        if(rows.length){
+          koneksi.query(queryRead, req.params.id, (err, rows, field) => {
+            res.status(200).json({ success: true, data: rows });
+          });
+        } else {
+          return res.status(404).json({success: false, message: 'Data Not Found'})
+        }
       });
     } 
     catch (err) {
@@ -36,9 +45,18 @@ class WorkerController {
   static async getWorkerDepartement(req, res) {
     try {
       const queryRead = "SELECT * FROM worker WHERE departement = ?";
+      const querySearch = 'SELECT * FROM worker WHERE departement = ?';
+    
+      koneksi.query(querySearch, req.params.departement, (err, rows, field) => {
 
-      koneksi.query(queryRead, req.params.departement, (err, rows, field) => {
-        res.status(200).json({ success: true, data: rows });
+        // jika ketemu departement-nya
+        if(rows.length){
+          koneksi.query(queryRead, req.params.departement, (err, rows, field) => {
+            res.status(200).json({ success: true, data: rows });
+          });
+        } else {
+          return res.status(404).json({success: false, message: 'Data Not Found'})
+        }
       });
     } 
     catch (err) {
@@ -50,9 +68,18 @@ class WorkerController {
   static async getWorkerSalary(req, res) {
     try {
       const queryRead = "SELECT * FROM worker WHERE salary = ?";
+      const querySearch = 'SELECT * FROM worker WHERE salary = ?';
+    
+      koneksi.query(querySearch, req.params.salary, (err, rows, field) => {
 
-      koneksi.query(queryRead, req.params.salary, (err, rows, field) => {
-        res.status(200).json({ success: true, data: rows });
+        // jika ketemu salary-nya
+        if(rows.length){
+          koneksi.query(queryRead, req.params.salary, (err, rows, field) => {
+            res.status(200).json({ success: true, data: rows });
+          });
+        } else {
+          return res.status(404).json({success: false, message: 'Data Not Found'})
+        }
       });
     } 
     catch (err) {
@@ -90,19 +117,17 @@ class WorkerController {
   // update data worker with :id
   static async updateWorker(req, res) {
     try {
-      // const { salary, departement } = req.body;
-      // const data = {
-      //   salary: salary,
-      //   departement: departement
-      // };
-      const data = {...req.query};
+      const { salary, departement } = req.query;
+      const data = {
+        salary: salary,
+        departement: departement
+      };
+      // const data = {...req.query};
       const querySearch = 'SELECT * FROM worker WHERE id = ?';
       const queryUpdate = 'UPDATE worker SET ? WHERE id = ?';
     
       koneksi.query(querySearch, req.params.id, (err, rows, field) => {
-        if(err){
-          return res.status(500).json({message: 'Failed Insert Data!!', error: err})
-        }
+
         // jika ketemu ID-nya
         if(rows.length){
           koneksi.query(queryUpdate, [data, req.params.id], (err, rows, field) => {
