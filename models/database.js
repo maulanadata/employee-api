@@ -8,7 +8,7 @@ const util = require('util');
 //   host: "localhost",
 //   user: "root",
 //   password: "",
-//   database: "ujian_nodejs",
+//   database: "employee-api",
 //   multipleStatements: true
 // })
 
