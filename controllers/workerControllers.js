@@ -90,7 +90,7 @@ class WorkerController {
   // create new data worker
   static async createWorker(req, res) {
     try {
-      const { first_name, last_name, salary, departement } = req.query;
+      const { first_name, last_name, salary, departement } = req.body;
       const data = {
         first_name: first_name,
         last_name: last_name,
@@ -117,7 +117,7 @@ class WorkerController {
   // update data worker with :id
   static async updateWorker(req, res) {
     try {
-      const { salary, departement } = req.query;
+      const { salary, departement } = req.body;
       const data = {
         salary: salary,
         departement: departement

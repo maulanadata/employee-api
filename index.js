@@ -9,14 +9,15 @@ const router = require('./router');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(router);
-app.use(cors());
 
 // body parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
 }));
+
+app.use(cors());
+app.use(router);
 
 // =======================
 // app.get('/', (req, res) => {
