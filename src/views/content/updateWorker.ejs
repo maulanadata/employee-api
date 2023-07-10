@@ -1,0 +1,50 @@
+<div id="updateWorker" class="mt-5">
+	<h2 class="fw-bold text-muted">Update Worker</h2>
+	<hr style="width: 300px" />
+
+	<p>
+		kami berikan parameter apa saja yang dibutuhkan untuk melakukan
+		<mark>update</mark> data. Berikut parameter yang perlu anda catat.
+	</p>
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th scope="col" style="width: 25%">Parameter</th>
+				<th scope="col">Tipe data</th>
+				<th scope="col">Keterangan</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><mark> salary </mark></td>
+				<td>Integer</td>
+				<td>Mengubah gaji</td>
+			</tr>
+			<tr>
+				<td><mark> departement </mark></td>
+				<td>String</td>
+				<td>Mengubah departement</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<p>
+		NB : Parameter diatas berjalan pada <mark>req.body</mark> dengan id yang
+		sudah ditentukan. Untuk update hanya tersedia untuk "salary" dan atau
+		"departement".
+	</p>
+	<p>Contoh penggunaan :</p>
+	<div>
+		<h5>Mengedit data</h5>
+		<pre class="box-script">
+http://localhost:port/worker/10
+    </pre>
+	</div>
+	<pre class="box-script">
+{
+	"salary": 5000000,
+	"departement": "Operator"
+}
+  </pre>
+</div>

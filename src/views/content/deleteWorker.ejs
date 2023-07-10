@@ -1,0 +1,33 @@
+<div id="deleteWorker" class="mt-5">
+	<h2 class="fw-bold text-muted">Delete Worker</h2>
+	<hr style="width: 300px" />
+
+	<p>
+		kami berikan parameter apa saja yang dibutuhkan untuk melakukan
+		<mark>delete</mark> data. Berikut parameter yang perlu anda catat.
+	</p>
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th scope="col" style="width: 25%">Parameter</th>
+				<th scope="col">Keterangan</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><mark> /{:id} </mark></td>
+				<td>Menghapus semua data berdasarkan ID</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<p>NB : Parameter diatas berjalan pada <mark>req.params</mark></p>
+	<p>Contoh penggunaan :</p>
+	<div>
+		<h5>Menghapus data berdasarkan ID</h5>
+		<pre class="box-script">
+http://localhost:port/worker/6
+    </pre>
+	</div>
+</div>

@@ -1,0 +1,58 @@
+<div id="createWorker" class="mt-5">
+	<h2 class="fw-bold text-muted">Create Worker</h2>
+	<hr style="width: 300px" />
+
+	<p>
+		kami berikan parameter apa saja yang dibutuhkan untuk melakukan
+		<mark> insert </mark> data. Berikut parameter yang perlu anda catat.
+	</p>
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th scope="col" style="width: 25%">Parameter</th>
+				<th scope="col">Tipe data</th>
+				<th scope="col">Keterangan</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><mark> first_name </mark></td>
+				<td>String</td>
+				<td>Menambahkan nama depan</td>
+			</tr>
+			<tr>
+				<td><mark> last_name </mark></td>
+				<td>String</td>
+				<td>Menambahkan nama belakang</td>
+			</tr>
+			<tr>
+				<td><mark> salary </mark></td>
+				<td>Integer</td>
+				<td>Menambahkan gaji</td>
+			</tr>
+			<tr>
+				<td><mark> departement </mark></td>
+				<td>String</td>
+				<td>Menambahkan departement</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<p>NB : Parameter diatas berjalan pada <mark>req.body</mark></p>
+	<p>Contoh penggunaan :</p>
+	<div>
+		<h5>Menambahkan data</h5>
+		<pre class="box-script" width="auto">
+http://localhost:port/worker/
+    </pre>
+	</div>
+	<pre class="box-script">
+{
+  "first_name": "Wildan",
+  "last_name": "Maulana",
+  "salary": 7500000,
+  "departement": "Programmer"
+}
+  </pre>
+</div>
