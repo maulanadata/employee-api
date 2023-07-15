@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <div>
-    <%- include('../partials/header'); %>
-  </div>
-<body>
-  <div class="container mw-100">
-  
-    <div class="d-flex">
-      <div class="p-3 bg-light border mb-3" style="width: 25%; position: fixed;">
-        <%- include('../partials/sidebar'); %>
-      </div>
-      
-      <div class="p-3 bg-light border mb-3" style="width: 75%; margin-left: 350px;">
-        <%- include('../content/introduction'); %>
-        <%- include('../content/createWorker'); %>
-        <%- include('../content/readWorker'); %>
-        <%- include('../content/updateWorker'); %>
-        <%- include('../content/deleteWorker'); %>
-      </div>
-    </div>
-    
-    <div>
-      <%- include('../partials/footer'); %>
-    </div>
+	<div><%- include('../partials/header'); %></div>
+	<body>
+		<div class="container mw-100">
+			<div class="d-flex">
+				<div
+					class="p-3 bg-light border mb-3"
+					style="width: 25%; position: fixed"
+				>
+					<%- include('../partials/sidebar'); %>
+				</div>
 
-  </div>
-</body>
+				<div
+					class="p-3 bg-light border mb-3"
+					style="width: 75%; margin-left: 350px"
+				>
+					<%- include('../content/introduction'); %> <%-
+					include('../content/createWorker'); %> <%-
+					include('../content/readWorker'); %> <%-
+					include('../content/updateWorker'); %> <%-
+					include('../content/deleteWorker'); %>
+				</div>
+			</div>
+
+			<div><%- include('../partials/footer'); %></div>
+		</div>
+	</body>
 </html>

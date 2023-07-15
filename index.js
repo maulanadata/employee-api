@@ -6,8 +6,9 @@ const path = require("path");
 const router = require("./src/router");
 // const view = __dirname + "/views/";
 
+require("dotenv").config();
 const app = express();
-const PORT = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 
 // body parser
 app.use(bodyParser.json());
@@ -38,6 +39,6 @@ app.get("/docs", (req, res) => {
 // =======================
 
 // log server
-app.listen(PORT, () => {
-	console.log(`Server running at port ${PORT}`);
+app.listen(port, () => {
+	console.log(`Server running at port ${port}`);
 });

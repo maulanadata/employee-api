@@ -16,19 +16,13 @@
 	</p>
 	<br />
 	<p>
-		URL :
+		URL : <% if(process.env.BASE_URL){ %>
+		<mark> <span><%= process.env.BASE_URL %>/worker</span> </mark>
+		<% } else { %>
 		<mark>
-			<span style="color: rgba(255, 255, 0)">www.example.com</span>/worker
+			<span>http://localhost:port/worker</span>
 		</mark>
-		<span style="margin-left: 10px"
-			>==> Ganti example.com menjadi URL di atas</span
-		>
-	</p>
-	<p>
-		URL Localhost :
-		<mark>
-			<span style="color: rgb(255, 255, 0)">http://localhost:port</span>/worker
-		</mark>
+		<% } %>
 	</p>
 	<br />
 	<p>Terimakasih.</p>

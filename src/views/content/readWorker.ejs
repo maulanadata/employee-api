@@ -38,26 +38,42 @@
 	<p>Contoh penggunaan :</p>
 	<div>
 		<h5>Menampilkan semua data</h5>
-		<pre class="box-script">
-http://localhost:port/worker/
-    </pre>
+		<div class="box-script">
+			<% if(process.env.BASE_URL){ %>
+			<span><%= process.env.BASE_URL %>/worker</span>
+			<% } else { %>
+			<span>http://localhost:port/worker</span>
+			<% } %>
+		</div>
 	</div>
 	<div>
 		<h5>Menampilkan semua data berdasarkan ID</h5>
-		<pre class="box-script">
-http://localhost:port/worker/6
-    </pre>
+		<div class="box-script">
+			<% if(process.env.BASE_URL){ %>
+			<span><%= process.env.BASE_URL %>/worker/6</span>
+			<% } else { %>
+			<span>http://localhost:port/worker/6</span>
+			<% } %>
+		</div>
 	</div>
 	<div>
 		<h5>Menampilkan semua data berdasarkan gaji</h5>
-		<pre class="box-script">
-http://localhost:port/worker/salary/7500000
-    </pre>
+		<div class="box-script">
+			<% if(process.env.BASE_URL){ %>
+			<span> <%= process.env.BASE_URL %>/worker/salary/7500000 </span>
+			<% } else { %>
+			<span>http://localhost:port/worker/salary/7500000</span>
+			<% } %>
+		</div>
 	</div>
 	<div>
 		<h5>Menampilkan semua data berdasarkan departement</h5>
-		<pre class="box-script">
-http://localhost:port/worker/departement/hr
-    </pre>
+		<div class="box-script">
+			<% if(process.env.BASE_URL){ %>
+			<span> <%= process.env.BASE_URL %>/worker/departement/hr </span>
+			<% } else { %>
+			<span>http://localhost:port/worker/departement/hr</span>
+			<% } %>
+		</div>
 	</div>
 </div>

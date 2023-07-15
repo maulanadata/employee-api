@@ -43,16 +43,26 @@
 	<p>Contoh penggunaan :</p>
 	<div>
 		<h5>Menambahkan data</h5>
-		<pre class="box-script" width="auto">
-http://localhost:port/worker/
-    </pre>
+		<div class="box-script" width="auto">
+			<% if(process.env.BASE_URL){ %>
+			<span><%= process.env.BASE_URL %>/worker</span>
+			<% } else { %>
+			<span>http://localhost:port/worker</span>
+			<% } %>
+		</div>
 	</div>
-	<pre class="box-script">
-{
-  "first_name": "Wildan",
-  "last_name": "Maulana",
-  "salary": 7500000,
-  "departement": "Programmer"
-}
-  </pre>
+	<pre id="create-worker" class="box-script"></pre>
 </div>
+
+<script>
+	const createWorker = {
+		first_name: "Wildan",
+		last_name: "Maulana",
+		salary: 7500000,
+		departement: "Programmer",
+	};
+
+	const createWorkerString = JSON.stringify(createWorker, null, 2);
+	const createWorkerElement = document.getElementById("create-worker");
+	createWorkerElement.textContent = createWorkerString;
+</script>

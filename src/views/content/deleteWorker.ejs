@@ -26,8 +26,12 @@
 	<p>Contoh penggunaan :</p>
 	<div>
 		<h5>Menghapus data berdasarkan ID</h5>
-		<pre class="box-script">
-http://localhost:port/worker/6
-    </pre>
+		<div class="box-script">
+			<% if(process.env.BASE_URL){ %>
+			<span><%= process.env.BASE_URL %>/worker/6</span>
+			<% } else { %>
+			<span>http://localhost:port/worker/6</span>
+			<% } %>
+		</div>
 	</div>
 </div>

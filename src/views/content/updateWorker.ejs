@@ -37,14 +37,24 @@
 	<p>Contoh penggunaan :</p>
 	<div>
 		<h5>Mengedit data</h5>
-		<pre class="box-script">
-http://localhost:port/worker/10
-    </pre>
+		<div class="box-script">
+			<% if(process.env.BASE_URL){ %>
+			<span><%= process.env.BASE_URL %>/worker/10</span>
+			<% } else { %>
+			<span>http://localhost:port/worker/10</span>
+			<% } %>
+		</div>
 	</div>
-	<pre class="box-script">
-{
-	"salary": 5000000,
-	"departement": "Operator"
-}
-  </pre>
+	<pre id="update-worker" class="box-script"></pre>
 </div>
+
+<script>
+	const updateWorker = {
+		salary: 5000000,
+		departement: "Operator",
+	};
+
+	const updateWorkerString = JSON.stringify(updateWorker, null, 2);
+	const updateWorkerElement = document.getElementById("update-worker");
+	updateWorkerElement.textContent = updateWorkerString;
+</script>
